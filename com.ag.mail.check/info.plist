@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ag.mail.check</string>
+	<key>connections</key>
+	<dict>
+		<key>62E52AAD-5234-4619-87C6-BC3CB92652EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6885DA66-DB9B-4B41-814A-C205EE410A99</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6885DA66-DB9B-4B41-814A-C205EE410A99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2F4CCEBA-7B0D-47F4-B849-1F0EDD79E75B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Anthony Gelibert</string>
+	<key>description</key>
+	<string>Check for new mail in Apple Mail</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Check for new mail</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>New mails: {query}</string>
+				<key>title</key>
+				<string>Mail</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>2F4CCEBA-7B0D-47F4-B849-1F0EDD79E75B</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>check</string>
+				<key>subtext</key>
+				<string>Check for new mails in Apple Mail</string>
+				<key>text</key>
+				<string>Check for new mails</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>62E52AAD-5234-4619-87C6-BC3CB92652EC</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>script</key>
+				<string>tell application "Mail"	check for new mail	delay 0.5	repeat until (background activity count) = 0		delay 0.5 -- wait until all new messages are in the box	end repeat	return (get the unread count of inbox)end tell</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6885DA66-DB9B-4B41-814A-C205EE410A99</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2F4CCEBA-7B0D-47F4-B849-1F0EDD79E75B</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>62E52AAD-5234-4619-87C6-BC3CB92652EC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6885DA66-DB9B-4B41-814A-C205EE410A99</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
